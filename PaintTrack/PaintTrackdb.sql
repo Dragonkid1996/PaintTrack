@@ -1,0 +1,22 @@
+﻿--CREATE DATABASE PaintTracker
+
+--DROP TABLE Games
+--DROP TABLE Miniatures
+
+CREATE TABLE Games
+(
+	GameID INT IDENTITY PRIMARY KEY,
+	GameName VARCHAR(MAX),
+	GamePublisher VARCHAR(MAX),
+	GameMaximumMiniatures INT DEFAULT 0,
+	GameMiniaturesPainted INT DEFAULT 0,
+	GameLink VARCHAR(MAX)
+);
+
+CREATE TABLE Miniatures
+(
+	MiniID INT IDENTITY PRIMARY KEY,
+	MiniName VARCHAR(MAX),
+	GameID INT FOREIGN KEY REFERENCES Games(GameID),
+	MiniPhoto VARCHAR(MAX)
+);

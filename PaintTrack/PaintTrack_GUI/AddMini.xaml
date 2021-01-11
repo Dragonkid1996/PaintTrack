@@ -1,0 +1,17 @@
+﻿<Window x:Class="PaintTrack_GUI.AddMini"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PaintTrack_GUI"
+        mc:Ignorable="d"
+      Title="Add a Miniature" MaxHeight="225" MaxWidth="550" MinHeight="225" MinWidth="550" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,0,0">
+        <Label x:Name="lblName" Content="Name:" HorizontalAlignment="Left" Height="28" Margin="25,30,0,0" VerticalAlignment="Top" Width="90"/>
+        <Label x:Name="lblPhoto" Content="Link to Photo:" HorizontalAlignment="Left" Height="28" Margin="25,70,0,0" VerticalAlignment="Top" Width="90"/>
+        <TextBox x:Name="tbMiniName" Text="" TextWrapping="Wrap" Margin="150,30,35,126"/>
+        <TextBox x:Name="tbPhoto" Text="" TextWrapping="Wrap" Margin="150,70,166,86" MaxLines="1"/>
+        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Center" Margin="0,127,0,0" VerticalAlignment="Top" Height="29" Width="153" Click="btnSubmit_Click"/>
+        <Button x:Name="btnBrowse" Content="Browse" HorizontalAlignment="Left" Height="30" Margin="391,70,0,0" VerticalAlignment="Top" Width="124" Click="btnBrowse_Click"/>
+    </Grid>
+</Window>

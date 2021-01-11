@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -12,17 +10,25 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PaintTrack;
 
 namespace PaintTrack_GUI
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AddGame.xaml
     /// </summary>
-    public partial class MainWindow : NavigationWindow
+    public partial class AddGame : Window
     {
-        public MainWindow()
+        CRUDManager crudManager = new CRUDManager();
+        public AddGame()
         {
             InitializeComponent();
+        }
+
+        private void btnSubmit_Click(object sender, RoutedEventArgs e)
+        {
+            crudManager.AddGame(tbName.Text, tbPublisher.Text, tbLink.Text, tbMinis.Text);
+            this.Close();
         }
     }
 }

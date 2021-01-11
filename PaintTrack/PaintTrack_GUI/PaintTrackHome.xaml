@@ -1,0 +1,34 @@
+﻿<Page x:Class="PaintTrack_GUI.PaintTrackHome"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PaintTrack_GUI"
+        mc:Ignorable="d"
+        Title="PaintTrack" MaxHeight="650" MaxWidth="950" MinHeight="650" MinWidth="950">
+    <Grid>
+        <Label x:Name="label" Content="Double Click a game to" HorizontalAlignment="Left" Margin="24,25,0,0" VerticalAlignment="Top" Width="249"/>
+        <ListView x:Name="lvGames" HorizontalAlignment="Left" Height="490" Margin="205,22,0,0" VerticalAlignment="Top" Width="666" MouseDoubleClick="listView_MouseDoubleClick">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="0" DisplayMemberBinding="{Binding ID}"/>
+                    <GridViewColumn Header="Name" Width="200" DisplayMemberBinding="{Binding Names}"/>
+                    <GridViewColumn Header="Publisher" Width="150" DisplayMemberBinding="{Binding Publisher}"/>
+                    <GridViewColumn Header="Link to BoardGameGeek Page" Width="250">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock>
+                                    <Hyperlink NavigateUri="{Binding Path=Link}" RequestNavigate="TextBlock_MouseDown">
+                                        <TextBlock Text="{Binding Path=Link}"/>
+                                    </Hyperlink>                                        
+                                </TextBlock>                                
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="btnAddGame" Content="Add a Game" HorizontalAlignment="Left" Margin="25,310,0,0" VerticalAlignment="Top" Height="39" Width="139" Click="btnAddGame_Click"/>
+        <Label x:Name="label_Copy" Content="view it's miniatures" HorizontalAlignment="Left" Margin="24,40,0,0" VerticalAlignment="Top" Width="249"/>
+    </Grid>
+</Page>
